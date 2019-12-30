@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>setviewtostreetsideHTML</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "Segoe UI", Helvetica, Arial, Sans-Serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="printoutPanel"></div>
+
+    <div id="myMap" style="width: 100vw; height: 100vh;"></div>
+    <script type="text/javascript">
+      function loadMapScenario() {
+        var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {
+          /* No need to set credentials if already passed in URL */
+          mapTypeId: Microsoft.Maps.MapTypeId.road,
+          zoom: 18,
+          center: new Microsoft.Maps.Location(28.332823, -81.492279)
+        });
+        map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.streetside });
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://www.bing.com/api/maps/mapcontrol?key=AqgM-FuMo0O05VkfBuHMOT5bNsn5jhSvVjjmJiMXFUhLxO-XldHQNbW4577Lj3y9&callback=loadMapScenario"
+      async
+      defer
+    ></script>
+  </body>
+</html>
